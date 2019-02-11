@@ -1,0 +1,160 @@
+\documentclass[12pt,a4paper,reqno,parskip=full]{amsart}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{parskip}
+
+\begingroup
+\makeatletter
+\@for\theoremstyle:=definition,remark,plain\do{
+\expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{
+\addtolength\thm@preskip\parskip}}
+\endgroup
+
+\numberwithin{equation}{section}
+\addtolength{\textwidth}{3 truecm}
+\addtolength{\textheight}{1 truecm}
+\setlength{\voffset}{-.6 truecm}
+\setlength{\hoffset}{-1.3 truecm}
+\theoremstyle{plain}
+
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{claim}[subsection]{Claim}
+\newtheorem{conjecture}[subsection]{Conjecture}
+\newtheorem{question}[subsection]{Question}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{example}[subsection]{Example}
+
+\theoremstyle{definition}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\eps}{\varepsilon}
+
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\modulo}{mod}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Id}{Id}
+
+\def\AA{{\mathcal A}}
+\def\CC{{\mathcal C}}
+\def\DD{{\mathcal D}}
+\def\E{{\mathbb E}}
+\def\EE{{\mathcal E}}
+\def\FF{{\mathbb F}}
+\def\II{{\mathcal I}}
+\def\N{{\mathbb N}}
+\def\OO{{\mathcal O}}
+\def\PP{{\mathcal P}}
+\def\Q{{\mathbb Q}}
+\def\R{{\mathbb R}}
+\def\S{{\mathbb S}}
+\def\SS{{\mathcal S}}
+\def\UU{{\mathcal U}}
+\def\Z{{\mathbb Z}}
+
+\begin{document}
+
+\title{Homework 3}
+
+\author{E. Taber McFarlin}
+
+\maketitle
+
+I pledge my honor that I have abided by the Stevens Honor System.
+
+\renewcommand{\labelenumii}{\roman{enumii}}
+\begin{enumerate}
+  \item
+        \begin{proposition}
+          Let $x, y \in \mathbb{Z}$ Prove that if $xy$ is odd, then $x^2 + y^2$ is even.
+        \end{proposition}
+
+        \begin{proof}
+          As shown below, the product $xy$ is odd if and only if $x$ and $y$ are both odd.
+
+          Assume, without loss of generality, that $x$ was even:
+          \[xy = 2ky\]
+          However, if $x$ and $y$ are both odd:
+          \[(2k + 1)(2m + 1) = 2(2km + k + m) + 1\]
+          So $x$ and $y$ are both odd.
+
+          The square of an odd number is odd, therefore both $x^2$ and $y^2$ are odd.
+
+          It is also true that the sum of two odd numbers is even.
+
+          Therefore, if $xy$ is odd, then $x^2 + y^2$ is even.
+
+        \end{proof}
+
+  \item
+        \begin{proposition}
+          Let $A=\{1,2,3\}$ and $B=\{2,3,4\}$ be subsets of $S=\{1,2,3,4\}$, and let $x\in S$.
+          Prove that $2x^2-5x$ is either positive and even or negative and odd
+          if and only if $x\not\in A\cap B$.
+        \end{proposition}
+        \begin{proof}
+          There are two cases where $x \notin A\cap B$ (1 and 4),
+          and two cases where $x \in A\cap B$ (2 and 4).
+
+          \begin{enumerate}
+            \item $x = 1$
+                  \[2(1)^2 - 5(1) = -3\]
+                  $-3$ is negative and odd.
+            \item $x = 4$
+                  \[2(4)^2 - 5(4) = 32 - 20 = 12\]
+                  12 is positive and even.
+            \item $x = 2$
+                  \[2(2)^2 - 5(2) = 8 - 10 = -2\]
+                  $-2$ is negative and even.
+            \item $x = 3$
+                  \[2(3)^2 - 5(3) = 18 - 15 = 3\]
+                  3 is positive and odd.
+          \end{enumerate}
+
+          In all of the cases, and only the cases, where $x \notin A\cap B$ and $x \in S$, is
+          $2x^2-5x$ either positive and even or negative and odd.
+        \end{proof}
+
+  \item
+        \begin{proposition}
+          Prove that the function $d(x,y) = \left|\log\left(\frac{y}{x}\right)\right|$
+          is a metric on the set of positive real numbers.
+        \end{proposition}
+        \begin{proof} This proof requires showing the four conditions of a metric:
+          \begin{enumerate}
+            \item $d(x,y) \geq 0$
+                  \[
+                    \left|\log\left(\frac{y}{x}\right)\right| \geq 0
+                  \]
+            \item $d(x,y) = 0 \iff x = y$
+                  \[
+                    \log\left(\frac{x}{x}\right) = log(1) = 0
+                  \]
+            \item $d(x,y) = d(y,x)$
+                  Given:
+                  \[\log(n) = -\log(n^{-1})\]
+
+                  It follows:
+                  \begin{align*}
+                    d(x,y) & = \left|\log\left(\frac{y}{x}\right)\right|                                                     \\
+                    d(y,x) & = \left|\log\left((\frac{y}{x})^{-1}\right)\right| = \left|-\log\left(\frac{y}{x}\right)\right| \\
+                    d(x,y) & = d(y,x)
+                  \end{align*}
+            \item{$d(x,z) \leq d(x,y) + d(y,z)$}
+                  \begin{align*}
+                    \left|\log\left(\frac{z}{x}\right)\right| & \geq \left|\log\left(\frac{y}{x}\right)\right| + \left|\log\left(\frac{z}{y}\right)\right| \\
+                    |\log(z) - \log(x)|                       & \geq |\log(y) - \log(x)| + |\log(z) - \log(y)|                                             \\
+                  \end{align*}
+                  This equation has the same form as the triangle inequality for real numbers where: $d(x, y) = |y - x|$
+                  \[|z - x|\geq |y - x| + |z - y|\]
+
+                  Also, $\log(x) > log(y) \iff x > y$ so the inequality must hold for this equation.
+          \end{enumerate}
+        \end{proof}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,116 @@
+\documentclass[12pt,a4paper,reqno,parskip=full]{amsart}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{parskip}
+
+\begingroup
+\makeatletter
+\@for\theoremstyle:=definition,remark,plain\do{
+\expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{
+\addtolength\thm@preskip\parskip}}
+\endgroup
+
+\numberwithin{equation}{section}
+\addtolength{\textwidth}{3 truecm}
+\addtolength{\textheight}{1 truecm}
+\setlength{\voffset}{-.6 truecm}
+\setlength{\hoffset}{-1.3 truecm}
+\theoremstyle{plain}
+
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{claim}[subsection]{Claim}
+\newtheorem{conjecture}[subsection]{Conjecture}
+\newtheorem{question}[subsection]{Question}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{example}[subsection]{Example}
+
+\theoremstyle{definition}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\eps}{\varepsilon}
+
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\modulo}{mod}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Id}{Id}
+
+\def\AA{{\mathcal A}}
+\def\CC{{\mathcal C}}
+\def\DD{{\mathcal D}}
+\def\E{{\mathbb E}}
+\def\EE{{\mathcal E}}
+\def\FF{{\mathbb F}}
+\def\II{{\mathcal I}}
+\def\N{{\mathbb N}}
+\def\OO{{\mathcal O}}
+\def\PP{{\mathcal P}}
+\def\Q{{\mathbb Q}}
+\def\R{{\mathbb R}}
+\def\S{{\mathbb S}}
+\def\SS{{\mathcal S}}
+\def\UU{{\mathcal U}}
+\def\Z{{\mathbb Z}}
+
+\begin{document}
+
+\title{The Title of the Document}
+
+\author{E. Taber McFarlin}
+
+\maketitle
+
+\section{A Section}
+
+A prime number is a number $P \neq 1$
+
+Any number $n$ can be represented by the product of only one set of prime numbers
+\[
+x
+ \] 
+
+\[
+x^2+y^2=1.
+\]
+You can also use various environments to write out more involved computations.
+
+\subsection{A subsection}
+
+Here's a definition:
+
+\begin{definition}
+A function $f:\R\to\R$ is \emph{differentiable at $x$} if the limit
+\[
+f'(x)=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
+\]
+exists.
+\end{definition}
+
+And here's a theorem:
+
+\begin{theorem}
+If $f$ is a continuous function defined on the closed interval $[a,b]$, and if $f(x)=F'(x)$, then
+\[
+F(b)-F(a)=\int_a^bf(x)\,dx.
+\]
+That is, the total change of $F$ over $[a,b]$ is equal to the definite integral of its rate of change over $[a,b]$.
+\end{theorem}
+
+\begin{proof}
+This is where the proof goes. The white box at the end is meant to signal that the proof is complete.
+\end{proof}
+
+For a reference, see \cite{ref}.
+
+\begin{thebibliography}{10}
+
+\bibitem{ref} A reference (which \LaTeX\ will cite in the text using the label you create for it in the bibliography).
+
+\end{thebibliography}
+
+\end{document}

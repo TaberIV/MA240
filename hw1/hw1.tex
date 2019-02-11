@@ -1,0 +1,116 @@
+\documentclass[12pt,a4paper,reqno,parskip=full]{amsart}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{parskip}
+
+\begingroup
+\makeatletter
+\@for\theoremstyle:=definition,remark,plain\do{
+\expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{
+\addtolength\thm@preskip\parskip}}
+\endgroup
+
+\numberwithin{equation}{section}
+\addtolength{\textwidth}{3 truecm}
+\addtolength{\textheight}{1 truecm}
+\setlength{\voffset}{-.6 truecm}
+\setlength{\hoffset}{-1.3 truecm}
+\theoremstyle{plain}
+
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{claim}[subsection]{Claim}
+\newtheorem{conjecture}[subsection]{Conjecture}
+\newtheorem{question}[subsection]{Question}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{example}[subsection]{Example}
+
+\theoremstyle{definition}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\eps}{\varepsilon}
+
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\modulo}{mod}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Id}{Id}
+
+\def\AA{{\mathcal A}}
+\def\CC{{\mathcal C}}
+\def\DD{{\mathcal D}}
+\def\E{{\mathbb E}}
+\def\EE{{\mathcal E}}
+\def\FF{{\mathbb F}}
+\def\II{{\mathcal I}}
+\def\N{{\mathbb N}}
+\def\OO{{\mathcal O}}
+\def\PP{{\mathcal P}}
+\def\Q{{\mathbb Q}}
+\def\R{{\mathbb R}}
+\def\S{{\mathbb S}}
+\def\SS{{\mathcal S}}
+\def\UU{{\mathcal U}}
+\def\Z{{\mathbb Z}}
+
+\begin{document}
+
+\title{MA 240 - Homework 1}
+
+\author{E. Taber McFarlin}
+
+\begin{abstract}
+  I prove that the product of an even number and an odd number is even.
+\end{abstract}
+
+\maketitle
+
+
+\section{Introduction}
+
+The concepts involved in this proof are introduced in grade school, and are defined below:
+
+\begin{definition}
+  An even number is an integer that is divisible by two.
+\end{definition}
+
+\begin{definition}
+  An odd number is an integer that is not divisible by two.
+\end{definition}
+
+\begin{theorem}
+  Each natural number is the product of one unique combination of prime numbers.
+\end{theorem}
+
+\begin{proof}
+  If we multiply together an even number $(e)$ and odd number $(o)$, we can show this as multiplying the prime factors of each number altogether, including any repeating factors. We'll use $e_i$ and $o_i$ to show the prime factors of $e$ and $o$, respectively. (For now we will assume both $e$ and $o$ are natural numbers.)
+  \[
+    e * o = n
+  \]
+  \[
+    (e_0 e_1 ... e_n)(o_0 o_1 ... o_m) = n
+  \]
+
+  Since $e$ is known to be even, we know that 2 is at least one of its prime factors. Because of this, we can replace $e_0$ with 2.
+  \[
+    (2 e_1 ... e_n)(o_0 o_1 ... o_m) = n
+  \]
+
+  Since all of $e_i$ and $o_i$ are prime, we can show $n$ as:
+  \[
+    n = 2 p_1 p_2 ... p_n
+  \]
+
+  $n$ is the product of 2 and other integers, meaning it is a multiple of two, and $n$ is even.
+
+  Up until now we have assumed both $e$ and $o$ are natural numbers, meaning we have not covered the 0 and negative cases. 
+  
+  0 is an even number, and $0 * n = 0$ for any $n$, so that case also holds.
+
+  If either, or both, $e$ or $o$ are negative we could simply factor out $-1$ and find the prime factors of the magnitudes of the negative number(s), and the rest of the logic remains consistent.
+\end{proof} 
+\end{document}

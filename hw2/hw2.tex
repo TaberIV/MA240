@@ -1,0 +1,161 @@
+\documentclass[12pt,a4paper,reqno,parskip=full]{amsart}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{parskip}
+
+\begingroup
+\makeatletter
+\@for\theoremstyle:=definition,remark,plain\do{
+\expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{
+\addtolength\thm@preskip\parskip}}
+\endgroup
+
+\numberwithin{equation}{section}
+\addtolength{\textwidth}{3 truecm}
+\addtolength{\textheight}{1 truecm}
+\setlength{\voffset}{-.6 truecm}
+\setlength{\hoffset}{-1.3 truecm}
+\theoremstyle{plain}
+
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{claim}[subsection]{Claim}
+\newtheorem{conjecture}[subsection]{Conjecture}
+\newtheorem{question}[subsection]{Question}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{example}[subsection]{Example}
+
+\theoremstyle{definition}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\eps}{\varepsilon}
+
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\modulo}{mod}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Id}{Id}
+
+\def\AA{{\mathcal A}}
+\def\CC{{\mathcal C}}
+\def\DD{{\mathcal D}}
+\def\E{{\mathbb E}}
+\def\EE{{\mathcal E}}
+\def\FF{{\mathbb F}}
+\def\II{{\mathcal I}}
+\def\N{{\mathbb N}}
+\def\OO{{\mathcal O}}
+\def\PP{{\mathcal P}}
+\def\Q{{\mathbb Q}}
+\def\R{{\mathbb R}}
+\def\S{{\mathbb S}}
+\def\SS{{\mathcal S}}
+\def\UU{{\mathcal U}}
+\def\Z{{\mathbb Z}}
+
+\begin{document}
+
+\title{Homework 2}
+
+\author{E. Taber McFarlin}
+
+\maketitle
+
+I pledge my honor that I have abided by the Stevens Honor System.
+
+\begin{enumerate}
+  \item{
+        \begin{claim}
+          Let $r\in\mathbb{Q}_{>0}$. Prove that if $\frac{r^2+1}{r}\leq1$, then $\frac{r^2+2}{r}\leq2$.
+        \end{claim}
+
+        Below is a trivial proof showing that $\frac{r^2+1}{r}>1$ for all $r > 0$.
+        \begin{proof}
+
+          \begin{align*}
+            \frac{r^2 + 1}{r} & = \frac{n}{m}
+          \end{align*}
+
+          $n$ and $m$ must be positive real numbers given $r$ is a positive real number, and $\mathbb{Q}_{>0}$ is closed under division.
+        \end{proof}}
+
+  \item {
+        \begin{claim}
+          Prove that if $a$, $b$, and $c$ are odd integers such that $a+b+c=0$, then $abc<0$.
+        \end{claim}
+
+        Below is a vacuous proof showing $a+b+c=0$ cannot be true when $a$, $b$, and $c$ are odd.
+        \begin{proof}
+          Let $e, f, g \in \mathbb{Z}$:
+          \begin{align*}
+            (2e + 1) + (2f + 1) + (2g + 1) & = 0  \\
+            2e + 2f + 2g + 3               & = 0  \\
+            2(e + f + g)                   & = -3
+          \end{align*}
+
+          Negative 3 is not an even number and therefore cannot be expressed as $2k$ for any integer $k$. This proves that the sum of three odd numbers cannot be 0, and that the above claim is vacuously proven false.
+        \end{proof}}
+
+  \item {
+        \begin{claim}
+          Let $n\in\mathbb{Z}$. Prove that $2n^2+n$ is odd if and only if $\cos\left(\frac{n\pi}{2}\right)$ is even.
+        \end{claim}
+
+        \begin{proof}
+          There are two relevant cases for $2n^2+n$: $n$ is even or $n$ is odd.
+
+          If $n$ is even: \[2(2k)^2 + 2k = 2((2k)^2 + k)\] so the result is even.
+
+          If $n$ is odd:
+          \[
+            2(2k + 1)^2 + 2k + 1 = 2((2k + 1)^2 + k) + 1
+          \]
+          so the result is odd.
+
+          Next, will inspect $\cos\left(\frac{n\pi}{2}\right)$ in the cases when $n$ is even or odd.
+
+          If $n$ is even:
+          \[
+            \cos\left(\frac{2k\pi}{2}\right) = \cos\left(k\pi\right) = \pm 1,
+          \]
+          so the result is odd.
+
+          If $n$ is odd:
+          \[
+            \cos\left(\frac{(2k + 1)\pi}{2}\right) = 0
+          \]
+          so the result is even.
+
+          
+          So far we have proven the following:
+
+          $2n^2+n$ is odd $\iff n$ is odd.
+
+          $\cos\left(\frac{n\pi}{2}\right)$ is even $\iff n$ is odd.
+
+          If these two statments are equivalent to $n$ is odd, then they are equivalent to eachother.
+        \end{proof}}
+
+  \item {
+        \begin{itemize}
+          \item {
+                In general, proving that a statement $P$ is true if and only if a statement $Q$  is true requires proving the implication $P\implies Q$ and the implication $Q\implies P$. If both implications are true, then the statements $P$ and $Q$ are said to be \textit{equivalent}.
+
+                Suppose you want to prove that the statements $P$, $Q$, $R$, and $S$ are all equivalent to one another. Explain what you would have to do to complete a proof.}
+
+          \item {
+                In order to prove such a statement I would prove $P \implies Q$, then $Q \implies R$, then $R \implies S$, and finally, $S \implies P$.
+
+                This works because if we can prove all of the above statments then we have also proven statments like $Q \implies P$, because $ Q \implies R \implies S \implies P$.
+                }
+        \end{itemize}
+        }
+
+\end{enumerate}
+
+
+\end{document}
