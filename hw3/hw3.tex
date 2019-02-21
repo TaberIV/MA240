@@ -77,18 +77,14 @@ I pledge my honor that I have abided by the Stevens Honor System.
         \begin{proof}
           As shown below, the product $xy$ is odd if and only if $x$ and $y$ are both odd.
 
-          Assume, without loss of generality, that $x$ was even:
+          Case 1: Assume, without loss of generality, that $x$ is even, then: \\
+          Let $k\in\mathbb{Z}$
           \[xy = 2ky\]
-          However, if $x$ and $y$ are both odd:
-          \[(2k + 1)(2m + 1) = 2(2km + k + m) + 1\]
+          Case 2: $x$ and $y$ are both odd:
+          \[(2k + 1)(2m + 1) = 2(2km + k + m) + 1.\]
           So $x$ and $y$ are both odd.
 
-          The square of an odd number is odd, therefore both $x^2$ and $y^2$ are odd.
-
-          It is also true that the sum of two odd numbers is even.
-
-          Therefore, if $xy$ is odd, then $x^2 + y^2$ is even.
-
+          The square of an odd number is odd, therefore both $x^2$ and $y^2$ are odd. It is also true that the sum of two odd numbers is even. Therefore, if $xy$ is odd, then $x^2 + y^2$ is even.
         \end{proof}
 
   \item
@@ -98,8 +94,8 @@ I pledge my honor that I have abided by the Stevens Honor System.
           if and only if $x\not\in A\cap B$.
         \end{proposition}
         \begin{proof}
-          There are two cases where $x \notin A\cap B$ (1 and 4),
-          and two cases where $x \in A\cap B$ (2 and 4).
+          There are two cases where $x \notin A\cap B$ ($x=1$ and $x=4$),
+          and two cases where $x \in A\cap B$ ($x=2$ and $x=3$).
 
           \begin{enumerate}
             \item $x = 1$
@@ -133,27 +129,26 @@ I pledge my honor that I have abided by the Stevens Honor System.
                   \]
             \item $d(x,y) = 0 \iff x = y$
                   \[
-                    \log\left(\frac{x}{x}\right) = log(1) = 0
+                    \log\left(\frac{x}{x}\right) = \log(1) = 0
                   \]
+                  log is a continuous function that whose value is equal to 0 at only one point, when 1 is the input. $\frac{x}{y}$ can only be 1 when $x = y$.
             \item $d(x,y) = d(y,x)$
-                  Given:
+                  Given
                   \[\log(n) = -\log(n^{-1})\]
 
-                  It follows:
+                  It follows that:
                   \begin{align*}
                     d(x,y) & = \left|\log\left(\frac{y}{x}\right)\right|                                                     \\
                     d(y,x) & = \left|\log\left((\frac{y}{x})^{-1}\right)\right| = \left|-\log\left(\frac{y}{x}\right)\right| \\
-                    d(x,y) & = d(y,x)
+                    d(x,y) & = d(y,x).
                   \end{align*}
             \item{$d(x,z) \leq d(x,y) + d(y,z)$}
                   \begin{align*}
-                    \left|\log\left(\frac{z}{x}\right)\right| & \geq \left|\log\left(\frac{y}{x}\right)\right| + \left|\log\left(\frac{z}{y}\right)\right| \\
-                    |\log(z) - \log(x)|                       & \geq |\log(y) - \log(x)| + |\log(z) - \log(y)|                                             \\
+                    \left|\log\left(\frac{z}{x}\right)\right| & \leq \left|\log\left(\frac{y}{x}\right)\right| + \left|\log\left(\frac{z}{y}\right)\right| \\
+                    |\log(z) - \log(x)|                       & \leq |\log(y) - \log(x)| + |\log(z) - \log(y)|                                             \\
                   \end{align*}
-                  This equation has the same form as the triangle inequality for real numbers where: $d(x, y) = |y - x|$
-                  \[|z - x|\geq |y - x| + |z - y|\]
-
-                  Also, $\log(x) > log(y) \iff x > y$ so the inequality must hold for this equation.
+                  This inequality has the same form as the triangle inequality for real numbers where: $d(x, y) = |y - x|$
+                  \[|z - x|\leq |y - x| + |z - y|\]
           \end{enumerate}
         \end{proof}
 \end{enumerate}
