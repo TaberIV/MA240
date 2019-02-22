@@ -142,13 +142,29 @@ I pledge my honor that I have abided by the Stevens Honor System.
                     d(y,x) & = \left|\log\left((\frac{y}{x})^{-1}\right)\right| = \left|-\log\left(\frac{y}{x}\right)\right| \\
                     d(x,y) & = d(y,x).
                   \end{align*}
-            \item{$d(x,z) \leq d(x,y) + d(y,z)$}
+            \item $d(x,z) \leq d(x,y) + d(y,z)$
                   \begin{align*}
                     \left|\log\left(\frac{z}{x}\right)\right| & \leq \left|\log\left(\frac{y}{x}\right)\right| + \left|\log\left(\frac{z}{y}\right)\right| \\
                     |\log(z) - \log(x)|                       & \leq |\log(y) - \log(x)| + |\log(z) - \log(y)|                                             \\
                   \end{align*}
-                  This inequality has the same form as the triangle inequality for real numbers where: $d(x, y) = |y - x|$
-                  \[|z - x|\leq |y - x| + |z - y|\]
+                  There are two cases we will consider.
+
+                  Case 1: $|\log(z) - \log(x)| = \log(z) - \log(x) $
+                  \begin{align*}
+                      & \log(z) - \log(x)                                           \\
+                    = & \log(z) - \log(y) + \log(y) - \log(x)                       \\
+                    = & \log\left(\frac{y}{x}\right) + \log\left(\frac{z}{y}\right) \\
+                  \end{align*}
+                  \[\log\left(\frac{y}{x}\right) + \log\left(\frac{z}{y}\right) \leq \left|\log\left(\frac{y}{x}\right)\right| + \left|\log\left(\frac{z}{y}\right)\right|\]
+
+                  Case 2:  $|\log(z) - \log(x)| = log(x) - \log(z)$
+                  \begin{align*}
+                      & \log(x) - \log(z)                        \\
+                    = & \log(x) - \log(y) + \log(y) - \log(z)    \\
+                    = & -(\log(y) - \log(x) + \log(z) - \log(y)) \\
+                    = & -\left(\log\left(\frac{y}{x}\right) + \log\left(\frac{z}{y}\right)\right)
+                  \end{align*}
+                  \[-\left(\log\left(\frac{y}{x}\right) + \log\left(\frac{z}{y}\right)\right) \leq \left|\log\left(\frac{y}{x}\right)\right| + \left|\log\left(\frac{z}{y}\right)\right|\]
           \end{enumerate}
         \end{proof}
 \end{enumerate}
