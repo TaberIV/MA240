@@ -1,0 +1,132 @@
+\documentclass[12pt,a4paper,reqno,parskip=full]{amsart}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{parskip}
+
+\begingroup
+\makeatletter
+\@for\theoremstyle:=definition,remark,plain\do{
+\expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{
+\addtolength\thm@preskip\parskip}}
+\endgroup
+
+\numberwithin{equation}{section}
+\addtolength{\textwidth}{3 truecm}
+\addtolength{\textheight}{1 truecm}
+\setlength{\voffset}{-.6 truecm}
+\setlength{\hoffset}{-1.3 truecm}
+\theoremstyle{plain}
+
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{claim}[subsection]{Claim}
+\newtheorem{conjecture}[subsection]{Conjecture}
+\newtheorem{question}[subsection]{Question}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{example}[subsection]{Example}
+
+\theoremstyle{definition}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\eps}{\varepsilon}
+
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\modulo}{mod}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Id}{Id}
+
+\def\AA{{\mathcal A}}
+\def\CC{{\mathcal C}}
+\def\DD{{\mathcal D}}
+\def\E{{\mathbb E}}
+\def\EE{{\mathcal E}}
+\def\FF{{\mathbb F}}
+\def\II{{\mathcal I}}
+\def\N{{\mathbb N}}
+\def\OO{{\mathcal O}}
+\def\PP{{\mathcal P}}
+\def\Q{{\mathbb Q}}
+\def\R{{\mathbb R}}
+\def\S{{\mathbb S}}
+\def\SS{{\mathcal S}}
+\def\UU{{\mathcal U}}
+\def\Z{{\mathbb Z}}
+
+\begin{document}
+
+\title{Homework 5}
+
+\author{E. Taber McFarlin}
+
+\maketitle
+
+\begin{enumerate}
+  \item Prove that $\displaystyle1^2+2^2+\ldots+n^2=\frac{n(n+1)(2n+1)}{6}$ for all $n\in\mathbb{N}$.
+        \begin{proof} Base step:
+          \[1^2 = \frac{1(2)(3)}{6} = 1\]
+
+          Inductive step:
+          \begin{align*}
+            \frac{n(n + 1)(2n + 1)}{6} + (n + 1)^2 & = \frac{(n + 1)(n + 2)(2(n + 1) + 1)}{6} \\
+            (2n^2 + n) + 6(n + 1)                  & = (n + 2)(2n + 3)                        \\
+                                                   & = 2n^2 + 7n + 6
+          \end{align*}
+        \end{proof}
+
+  \item Recall that the sequence of Fibonacci numbers is defined as follows: $F_1=F_2=1$, and $F_n=F_{n-1}+F_{n-2}$ when $n>2$.
+        \begin{enumerate}
+          \item Prove that $F_1^2+F_2^2+\ldots+F_n^2=F_nF_{n+1}$ for all $n\in\mathbb{N}$.
+                \begin{proof} Base step: $1^2 = 1 * 1$
+
+                  Inductive step:
+                  \begin{align*}
+                    F_nF_{n + 1} + F_{n + 1}^2 & = F_{n + 1}F_{n + 2} \\
+                    F_n + F_{n + 1}            & = F_{n + 2}
+                  \end{align*}
+
+                  This is the definition of $F_n$.
+                \end{proof}
+
+          \item Let $S_n$, where $n\in\mathbb{N}$, be the set all $n$-digit binary strings that have no consecutive 1s. Prove that $S_n$ has exactly $F_n+2$ elements.
+                \begin{proof} Base step: \\
+                  $S_1 = \{0, 1\}$ and $F_3 = 2$. \\
+                  $S_2 = \{0, 1, 10\}$ and $F_4 = 3$.
+
+                  Inductive step:
+                  
+                  Take $S_{n-1}$, and prepend 0 to all of those strings. We will call this set of strings $O_{n-1}$. $O_{n-1}$ has $F_{n+1}$ elements, same as $S_{n-1}$. All elements of $O_{n-1}$ are of length n, and adding only 0's to the strings cannot produce consecutive 1's, therefore $O_{n-1} \subset S_n$.
+
+                  Next, take all of the elements of $S_{n-2}$ and prepend 10 to all of them. We will call this set of strings $T_{n-2}$. $T_{n-2}$ has $F_{n+2}$ elements, same as $S_{n-2}$. All elements of $T_{n-2}$ are of length n. Adding 10 cannot create consecutive 1's, as there is a 0 between our introduced 1 and the first digit of the existing string.
+                  
+                  Let $O_{n-1} \cup T_{n-2} = U_n$. There cannot be any common elements between $O_{n-1}$ and $T_{n-2}$, because the elements of $O_{n-1}$ all start with 0 and the elements of $T_{n-2}$ all start with 1. This shows that $U_n \subset S_n$ and that $U_n$ has $F_n + F_{n+1} = F_{n+2}$ elements.
+
+                  The next step is to show that $U_n = S_n$. Assume there exists some $s$ such that $s\in S_n$ and $s\notin U_n$. Let $s_i$ be digit $i$ of $s$. $s_1$, the first digit of $s$, must be 0 or 1.
+
+                  Given $s_1 = 0$, the substring $s_2s...s_n$ is a string of length $n - 1$ that has no repeating 0s, so it must be an element of $S_{n-1}$ and therefore $s$ is in $U_n$.
+
+                  Given $s_1 = 1$, $s_2 = 0$ or there would be consecutive 1's. The substring $s_3s...s_n$ must be in $S_{n-2}$, and therefore $s$ is in $U_n$.
+                \end{proof}
+        \end{enumerate}
+  \item Suppose $n$ straight lines lie on a plane in such a way that no two of the lines are parallel and no three of the lines intersect at a single point. Prove that such a collection of lines divides the plane into $\displaystyle\frac{n^2+n+2}{2}$ regions.
+        \begin{proof}
+          Base step: 1 line seperates a plane into $\displaystyle\frac{1^2+1+2}{2} = 2$ regions.
+
+          Inductive step: When drawing the $n^{\text{th}}$ line it intersects each other line at a different point, as the problem's conditions state. This means there are $n - 1$ intersections when drawing line $n$. This new line creates $n$ new region, because at each intersection it finishes spliting a region into two sections, and then after the last intersection it procedes into the last existing region spliting it into two.
+
+          It is also worth noting that $\displaystyle\frac{n^2+n+2}{2} = \frac{n^2+n}{2} + 1 = \sum_0^n + 1$.
+
+          If we assume the conjecture is true up to $n-1$, we get the following.
+          \begin{align*}
+            \sum_0^{n-1} + 1 + n & = \sum_0^n + 1 \\
+            \sum_0^{n-1} + n     & = \sum_0^n
+          \end{align*}
+          It becomes clear that these two summations are equal, so the conjecture must be true.
+        \end{proof}
+\end{enumerate}
+
+\end{document}
