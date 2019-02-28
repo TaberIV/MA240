@@ -73,42 +73,42 @@ I pledge my honor that I have abided by the Stevens Honor System
           \item For any $x,y\in\mathbb{R}$, it is true that $\log(xy)=\log(x)+\log(y)$.
                 \begin{proof} Consider $x,y<0$
 
-                  $xy\in\mathbb{N}$, therefore $\log(xy)\in\mathbb{R}$.
+                  $xy > 0$, therefore $\log(xy)\in\mathbb{R}$.
 
-                  $log(x) + \log(y)\notin\mathbb{R}$, therefore the two numbers cannot be equal.
+                  $\log(x)$ and $\log(y)$ are undefined, so they cannot have a sum equal to a real number.
                 \end{proof}
 
           \item For every $n\in\mathbb{Z}$, the integer $f(n)=n^2-n+11$ is prime.
-                \begin{proof} Consider $f(50)$
+                \begin{proof} Consider $f(11)$
                   \begin{align*}
-                    f(50) & = 50^2 - 50 + 11 \\
-                    f(50) & = 2461
+                    f(50) & = 11^2 - 11 + 11 \\
+                    f(50) & = 11^2
                   \end{align*}
-                  2461 is not a prime number, its prime factors are 23 and 107.
+                  Square numbers are not prime.
                 \end{proof}
         \end{enumerate}
 
   \item A triple of integers $(a,b,c)$, where $a,b,c\in\mathbb{Z}$, is said to be a Pythagorean triple if $a^2+b^2=c^2$. Prove that if $(a,b,c)$ is a Pythagorean triple, then $a$ or $b$ is even.
         \begin{proof}
-          Assume $a$ and $b$ are odd. Let $k,m,n\in\mathbb{Z}$, $a = 2k + 1$, $b = 2m + 1$
+          Assume $a$ and $b$ are odd. Let $a = 2k + 1$, $b = 2m + 1$, $k,m,n\in\mathbb{Z}$. Then
           \begin{align*}
             (2k + 1)^2 + (2m + 1)^2      & = c^2 \\
             4k^2 + 4m^2 + 4k + 4m + 2    & = c^2 \\
-            2(2k^2 + 2m^2 + 2k + 2m + 1) & = c^2
+            2(2k^2 + 2m^2 + 2k + 2m + 1) & = c^2.
           \end{align*}
-          This shows that if $a$ and $b$ are odd, then $c^2$, and therefore $c$, must be even. Let $c = 2n$
+          This shows that if $a$ and $b$ are odd, then $c^2$, and therefore $c$, must be even. Let $c = 2n$. Then
           \begin{align*}
             (2k + 1)^2 + (2m + 1)^2    & = (2n)^2 \\
             4k^2 + 4m^2 + 4k + 4m + 2  & = 4n^2     \\
             4k^2 + 4m^2 + 4k + 4m + 4n^2 & = 2      \\
-            4(k^2 + m^2 + n^2 + k + m)   & = 2
+            4(k^2 + m^2 + n^2 + k + m)   & = 2.
           \end{align*}
           This would show that 4 is a factor of 2 which is not true.
         \end{proof}
 
   \item Prove that the number $\log_2(5)$ is irrational.
         \begin{proof}
-          Let $a,b\in\mathbb{Z}$
+          Let $a,b\in\mathbb{N}$. It is true that $\log_2(5) > 0$.
           \begin{align*}
             \frac{a}{b}     & =\log_2(5) \\
             2^{\frac{a}{b}} & = 5        \\
