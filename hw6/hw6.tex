@@ -23,7 +23,7 @@
 \newtheorem{lemma}[subsection]{Lemma}
 \newtheorem{corollary}[subsection]{Corollary}
 \newtheorem{claim}[subsection]{Claim}
-\newtheorem{conjecture}[subsection]{Conjecture}
+\newtheorem{conjecture}{Conjecture}
 \newtheorem{question}[subsection]{Question}
 \newtheorem{remark}[subsection]{Remark}
 \newtheorem{definition}[subsection]{Definition}
@@ -66,7 +66,8 @@
 \maketitle
 
 \begin{enumerate}
-  \item Prove or disprove the following statement: For every $n\in\mathbb{N}$, there exist $n$ natural numbers whose sum equals their product.
+  \item Prove or disprove the following statement: For every $n\in\mathbb{N}$, there exist $n$
+        natural numbers whose sum equals their product.
         \begin{proof}
           Let $x$ and $y$ be natural numbers whose sum equals their product.
           \begin{align*}
@@ -75,13 +76,19 @@
             y(x - 1) & = x               \\
             y        & = \frac{x}{x - 1}
           \end{align*}
-          All pairs of real numbers that satisfy the above function will be two numbers whose sum equals their product. However, for both members of the pair to be natural numbers, it must be true that $x$ is a natural number, and $(x - 1 )\mid x$. This is only true for $x=2$, so the only pair is $x=2,$ $y = 2$. This shows that the conjecture is false.
+          All pairs of real numbers that satisfy the above function will be two numbers whose sum
+          equals their product. However, for both members of the pair to be natural numbers, it must
+          be true that $x$ is a natural number, and $(x - 1 )\mid x$. This is only true for $x=2$,
+          so the only pair is $x=2,$ $y = 2$. This shows that the conjecture is false.
         \end{proof}
-  \item Prove or disprove the following statement: If $x$ and $y$ are irrational numbers such that $x < y$, then there exists a rational number $z$ such that $x<z<y$.
+  \item Prove or disprove the following statement: If $x$ and $y$ are irrational numbers such that
+        $x < y$, then there exists a rational number $z$ such that $x<z<y$.
         \begin{proof} Since $x < y$ it is true that $y - x > 0$. \\
-          Let $c\in\mathbb{N}$ such that $cy - cx > 1$. There must be some $n\in\mathbb{N}$ such that $cx<n<cy$. This means $\displaystyle x<\frac{n}{c}<y$. $\displaystyle z=\frac{n}{c}$
+          Let $c\in\mathbb{N}$ such that $cy - cx > 1$. There must be some $n\in\mathbb{N}$ such
+          that $cx<n<cy$. This means $\displaystyle x<\frac{n}{c}<y$. $\displaystyle z=\frac{n}{c}$
         \end{proof}
-  \item Prove or disprove the following statement: If $A$, $B$, $C$, and $D$ are sets, then $(A\times B)\cup(C\times D)=(A\cup C)\times(B\cup D)$.
+  \item Prove or disprove the following statement: If $A$, $B$, $C$, and $D$ are sets, then
+        $(A\times B)\cup(C\times D)=(A\cup C)\times(B\cup D)$.
         \begin{proof}
           If two sets are equal they must have the same number of elements.
           \[|(A\times B)\cup(C\times D)| = |(A\cup C)\times(B\cup D)|\]
@@ -98,8 +105,11 @@
           \end{align*}
           Clearly, the conjecture does not hold in this case.
         \end{proof}
-  \item Make a conjecture about which numbers $n\in\mathbb{N}$ can be expressed as a sum of two or more consecutive natural numbers. (Note that the numbers in the sum don't have to start at 1. For example, 12 is such a number since $12=3+4+5$). Then prove your conjecture.
-        \conjecture Any $n\in\mathbb{N}$ can be expressed as a sum of two or more consecutive natural numbers if and only if it is not a power of 2.
+  \item Make a conjecture about which numbers $n\in\mathbb{N}$ can be expressed as a sum of two or
+        more consecutive natural numbers. (Note that the numbers in the sum don't have to start at
+        1. For example, 12 is such a number since $12=3+4+5$). Then prove your conjecture.
+        \conjecture Any $n\in\mathbb{N}$ can be expressed as a sum of two or more consecutive
+        natural numbers if and only if it is not a power of 2.
         \begin{proof}
           $n$ is not a power of 2 $\implies$
           n can be expressed as a sum of two or more consecutive natural numbers. \\
@@ -113,14 +123,14 @@
           Any odd $n$ can be shown as two consecutive natural numbers.
 
           Case 2: $n$ is even, but not a power of 2. $n = 2^m * (2k + 1)$, where $m,k\in\mathbb{N}$.
-          \\ $\ddots$
+          $2k + 1$
+
+
 
           $n$ can be expressed as a sum of two or more consecutive natural numbers
           $\implies$ is not a power of 2. \\
           $\ddots$
         \end{proof}
-
-        Unfortunately I couldn't crack this one. I wrote a program to show me sums that worked for different numbers which is how I came up with my conjecture. I tried to make headway with any even number that isn't a power of 2 being $n = 2^m * (2k + 1)$. I also noticed that if the odd number in that equation is the product of multiple odd numbers that the number has multiple series of numbers that add to it. Beyond that I couldn't find enough to help me see why the pattern holds true.
 \end{enumerate}
 
 \end{document}
