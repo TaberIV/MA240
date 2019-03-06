@@ -123,9 +123,13 @@
           Any odd $n$ can be shown as two consecutive natural numbers.
 
           Case 2: $n$ is even, but not a power of 2. $n = 2^m * (2k + 1)$, where $m,k\in\mathbb{N}$.
-          $2k + 1$
-
-
+          If we start with $k + (k + 1)$ we have $2k + 1$, but we need to multiply this by $2^m$. If
+          \\ Let $c\in\mathbb{N}$
+          \begin{align*}
+            2k + 1 & = k + (k + 1)         \\
+                   & = k - c + (k + 1 + c)
+          \end{align*}
+          
 
           $n$ can be expressed as a sum of two or more consecutive natural numbers
           $\implies$ is not a power of 2. \\

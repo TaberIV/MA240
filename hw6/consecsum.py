@@ -37,7 +37,7 @@ def checkNum2(n):
       return sequence
   return None
 
-for i in range(2, 100):
+for i in range(2, 140):
   squence = checkNum(i)
   squence2 = checkNum2(i)
 
