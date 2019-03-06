@@ -113,27 +113,43 @@
         \begin{proof}
           $n$ is not a power of 2 $\implies$
           n can be expressed as a sum of two or more consecutive natural numbers. \\
-          Given $n\in\mathbb{N}$, $n$ will always be either even or odd.
+          Any $n$ that is not a power of 2 can be represented as: $2^m\times (2k + 1)$, where
+          $m\in\mathbb{Z}_{>0}$ and $k\in\mathbb{N}$. We can use these two factors in different
+          cases to construct a sequnce of consecutive integers that sums to $n$.
 
-          Case 1: If $n$ is odd, $n=2k+1$, where $k\in\mathbb{N}$.
+          When $2^{m + 1} > 2k + 1$: \\
+          Let $p\in\mathbb{N}$ and $2p + 1 = $ the least factor of $2k + 1$ that is not 1.
+          \[n = \left(2^m - \frac{p}{2}\right) +\dots 2^m+\dots \left(2^m + \frac{p}{2}\right)\]
+          We know that $\displaystyle \left(2^m - \frac{2^m}{2}\right)$ will be a natural number
+          because \[\frac{p}{2} < \frac{2k + 1}{2} < 2^m.\]
+
+          When $2^{m + 1} < 2k + 1$:
+          This case is simplest when $m = 0$, meaning the number is odd.
+          \[2k + 1 = k + (k + 1)\]
+          This gives us two consecutive natural numbers that sum to $n$. When $m > 0$, we can find
+          our consecutive natural numbers by adding to both sides of the sequence. We add a digit to
+          both sides until we have $2^{m+1}$ numbers. When adding a digit to both sides we do not
+          change the average of the entire sequence, meaning the average is
+          $\displaystyle\frac{2k + 1}{2}$.
+          Therefore our sum must be
+          \[\frac{2k + 1}{2} * 2^{m+1} = {2k + 1} * 2^m = n.\]
+          We know that there are at least $m$ natural numbers less than or equal to $k$ because
           \begin{align*}
-            n & = 2k + 1      \\
-            n & = k + (k + 1)
+            2k + 1          & > 2^{m+1} \\
+            k + \frac{1}{2} & > 2^m     \\
+            k               & \geq 2^m
           \end{align*}
-          Any odd $n$ can be shown as two consecutive natural numbers.
 
-          Case 2: $n$ is even, but not a power of 2. $n = 2^m * (2k + 1)$, where $m,k\in\mathbb{N}$.
-          If we start with $k + (k + 1)$ we have $2k + 1$, but we need to multiply this by $2^m$. If
-          \\ Let $c\in\mathbb{N}$
-          \begin{align*}
-            2k + 1 & = k + (k + 1)         \\
-                   & = k - c + (k + 1 + c)
-          \end{align*}
-          
+          $n$ is a power of 2 $\implies$
+          $n$ can not be expressed as a sum of two or more consecutive natural numbers. \\
+          Assume some sequence of $i$ consecutive numbers exists, and Let $n_i$ represent them.
+          \[n_1 + n_2 +\dots n_i = n\]
+          For any even $n$, there must be an even number of odd numbers in the sequence. This
+          means that $n_1$ must be odd, and $i$ is odd. Because the sequence is evenly spaced, and 
+          there is an odd number of elements, the average of the numbers is a natural number.
 
-          $n$ can be expressed as a sum of two or more consecutive natural numbers
-          $\implies$ is not a power of 2. \\
-          $\ddots$
+          This would imply that some natural number $m$, multiplied by the odd number $i$, would
+          be equal to a power of two, which a cannot be true. 
         \end{proof}
 \end{enumerate}
 
