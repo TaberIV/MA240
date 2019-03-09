@@ -78,7 +78,8 @@
           \end{align*}
         \end{proof}
 
-  \item Recall that the sequence of Fibonacci numbers is defined as follows: $F_1=F_2=1$, and $F_n=F_{n-1}+F_{n-2}$ when $n>2$.
+  \item Recall that the sequence of Fibonacci numbers is defined as follows: $F_1=F_2=1$,
+        and $F_n=F_{n-1}+F_{n-2}$ when $n>2$.
         \begin{enumerate}
           \item Prove that $F_1^2+F_2^2+\ldots+F_n^2=F_nF_{n+1}$ for all $n\in\mathbb{N}$.
                 \begin{proof} Base step: $1^2 = 1 * 1$
@@ -98,14 +99,26 @@
                   $S_2 = \{0, 1, 10\}$ and $F_4 = 3$.
 
                   Inductive step:
-                  
-                  Take $S_{n-1}$, and prepend 0 to all of those strings. We will call this set of strings $O_{n-1}$. $O_{n-1}$ has $F_{n+1}$ elements, same as $S_{n-1}$. All elements of $O_{n-1}$ are of length n, and adding only 0's to the strings cannot produce consecutive 1's, therefore $O_{n-1} \subset S_n$.
 
-                  Next, take all of the elements of $S_{n-2}$ and prepend 10 to all of them. We will call this set of strings $T_{n-2}$. $T_{n-2}$ has $F_{n+2}$ elements, same as $S_{n-2}$. All elements of $T_{n-2}$ are of length n. Adding 10 cannot create consecutive 1's, as there is a 0 between our introduced 1 and the first digit of the existing string.
-                  
-                  Let $O_{n-1} \cup T_{n-2} = U_n$. There cannot be any common elements between $O_{n-1}$ and $T_{n-2}$, because the elements of $O_{n-1}$ all start with 0 and the elements of $T_{n-2}$ all start with 1. This shows that $U_n \subset S_n$ and that $U_n$ has $F_n + F_{n+1} = F_{n+2}$ elements.
+                  Take $S_{n-1}$, and prepend 0 to all of those strings. We will call this set of
+                  strings $O_{n-1}$. $O_{n-1}$ has $F_{n+1}$ elements, same as $S_{n-1}$. All
+                  elements of $O_{n-1}$ are of length n, and adding only 0's to the strings cannot
+                  produce consecutive 1's, therefore $O_{n-1} \subset S_n$.
 
-                  The next step is to show that $U_n = S_n$. Assume there exists some $s$ such that $s\in S_n$ and $s\notin U_n$. Let $s_i$ be digit $i$ of $s$. $s_1$, the first digit of $s$, must be 0 or 1.
+                  Next, take all of the elements of $S_{n-2}$ and prepend 10 to all of them. We
+                  will call this set of strings $T_{n-2}$. $T_{n-2}$ has $F_{n+2}$ elements, same
+                  as $S_{n-2}$. All elements of $T_{n-2}$ are of length n. Adding 10 cannot create
+                  consecutive 1's, as there is a 0 between our introduced 1 and the first digit of
+                  the existing string.
+
+                  Let $O_{n-1} \cup T_{n-2} = U_n$. There cannot be any common elements between $O_
+                      {n-1}$ and $T_{n-2}$, because the elements of $O_{n-1}$ all start with 0 and the
+                  elements of $T_{n-2}$ all start with 1. This shows that $U_n \subset S_n$ and
+                  that $U_n$ has $F_n + F_{n+1} = F_{n+2}$ elements.
+
+                  The next step is to show that $U_n = S_n$. Assume there exists some $s$ such that
+                  $s\in S_n$ and $s\notin U_n$. Let $s_i$ be digit $i$ of $s$. $s_1$, the first
+                  digit of $s$, must be 0 or 1.
 
                   Given $s_1 = 0$, the substring $s_2s...s_n$ is a string of length $n - 1$ that has no repeating 0s, so it must be an element of $S_{n-1}$ and therefore $s$ is in $U_n$.
 
@@ -114,16 +127,17 @@
         \end{enumerate}
   \item Suppose $n$ straight lines lie on a plane in such a way that no two of the lines are parallel and no three of the lines intersect at a single point. Prove that such a collection of lines divides the plane into $\displaystyle\frac{n^2+n+2}{2}$ regions.
         \begin{proof}
-          Base step: 1 line seperates a plane into $\displaystyle\frac{1^2+1+2}{2} = 2$ regions.
+          Base step: one line seperates a plane into $\displaystyle\frac{1^2+1+2}{2} = 2$ regions.
 
-          Inductive step: When drawing the $n^{\text{th}}$ line it intersects each other line at a different point, as the problem's conditions state. This means there are $n - 1$ intersections when drawing line $n$. This new line creates $n$ new region, because at each intersection it finishes spliting a region into two sections, and then after the last intersection it procedes into the last existing region spliting it into two.
+          Inductive step: When drawing the $n^{\text{th}}$ line it intersects each other line at a different point, as the problem's conditions state. This means there are $n - 1$ intersections when drawing line $n$. This new line creates $n$ new regions, because at each intersection it is exiting one region it has split and enters another.
 
-          It is also worth noting that $\displaystyle\frac{n^2+n+2}{2} = \frac{n^2+n}{2} + 1 = \sum_0^n + 1$.
+          It is also worth noting that 
+          $\displaystyle\frac{n^2+n+2}{2} = \frac{n^2+n}{2} + 1 = \sum_{i=0}^ni + 1$.
 
           If we assume the conjecture is true up to $n-1$, we get the following.
           \begin{align*}
-            \sum_0^{n-1} + 1 + n & = \sum_0^n + 1 \\
-            \sum_0^{n-1} + n     & = \sum_0^n
+            \sum_{i=0}^{n-1}i + 1 + n & = \sum_{i=0}^ni + 1 \\
+            \sum_{i=0}^{n-1}i + n     & = \sum_{i=0}^ni
           \end{align*}
           It becomes clear that these two summations are equal, so the conjecture must be true.
         \end{proof}
