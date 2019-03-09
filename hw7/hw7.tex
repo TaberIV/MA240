@@ -1,0 +1,167 @@
+\documentclass[12pt,a4paper,reqno,parskip=full]{amsart}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{parskip}
+\usepackage{enumerate}
+
+\begingroup
+\makeatletter
+\@for\theoremstyle:=definition,remark,plain\do{
+\expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{
+\addtolength\thm@preskip\parskip}}
+\endgroup
+
+\numberwithin{equation}{section}
+\addtolength{\textwidth}{3 truecm}
+\addtolength{\textheight}{1 truecm}
+\setlength{\voffset}{-.6 truecm}
+\setlength{\hoffset}{-1.3 truecm}
+\theoremstyle{plain}
+
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{claim}[subsection]{Claim}
+\newtheorem{conjecture}[subsection]{Conjecture}
+\newtheorem{question}[subsection]{Question}
+\newtheorem{remark}[subsection]{Remark}
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{example}[subsection]{Example}
+
+\theoremstyle{definition}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\eps}{\varepsilon}
+
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\modulo}{mod}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Id}{Id}
+
+\def\AA{{\mathcal A}}
+\def\CC{{\mathcal C}}
+\def\DD{{\mathcal D}}
+\def\E{{\mathbb E}}
+\def\EE{{\mathcal E}}
+\def\FF{{\mathbb F}}
+\def\II{{\mathcal I}}
+\def\N{{\mathbb N}}
+\def\OO{{\mathcal O}}
+\def\PP{{\mathcal P}}
+\def\Q{{\mathbb Q}}
+\def\R{{\mathbb R}}
+\def\S{{\mathbb S}}
+\def\SS{{\mathcal S}}
+\def\UU{{\mathcal U}}
+\def\Z{{\mathbb Z}}
+
+\begin{document}
+
+\title{Homework 7}
+
+\author{E. Taber McFarlin}
+
+\maketitle
+
+\begin{enumerate}
+  \item Consider the relation $E$ defined on $\mathbb{R} \times\mathbb{R}$ by
+        $\left((a,b),(c,d)\right)\in E$ if $|a|+|b| = |c|+|d|$.
+        \begin{itemize}
+          \item Prove that $E$ is an equivalence relation.
+                \begin{proof}
+                  For $E$ to be an equivalence relation it must satisfy three conditions:
+                  \begin{enumerate}[i]
+                    \item Reflexive: $((a,b), (a,b))\in E$
+                          \[|a| + |b| = |a| + |b|\]
+                    \item Symmetric: $((a,b), (c,d))\in E \implies ((c,d), (a,b))\in E$
+                          \[|a| + |b| = |c| + |d|\]
+                          \[|c| + |d| = |a| + |b|\]
+                    \item Transitive:
+                          $((a,b), (c,d)),\,((c,d), (e,f))\in E \implies ((a,b), (e,f))\in E$
+                          \[|a| + |b| = |c| + |d| = |e| + |f|\]
+                  \end{enumerate}
+                \end{proof}
+          \item Give a geometric description of the equivalence classes of $E$. \\
+                The relation $E$ contains pairs of paris of rational numbers, for the numbers in
+                each pairs' distance from zero summed is the same in both pairs.
+        \end{itemize}
+  \item Prove that the relation $R$ on $\mathbb{Z}$ given by
+        $(a,b)\in R$ if $2a+3b\equiv0\,\,(\text{mod}\,\,5)$ is an equivalence relation.
+        \begin{proof}
+          For $R$ to be an equivalence relation it must satisfy three conditions:
+          \begin{enumerate}[i]
+            \item Reflexive: $(a,a)\in E$
+                  \begin{align*}
+                    2a + 3a \equiv 0\,\,(\text{mod}\,\,5)
+                     & \implies\exists n\in\mathbb{Z}: 5n\mid (2a + 3a) \\
+                    5a      \equiv 0\,\,(\text{mod}\,\,5)
+                     & \implies 5n\mid 5a                               \\
+                     & n  = a
+                  \end{align*}
+            \item Symmetric: $(a,b)\in E \implies (b, a)\in E$
+                  \[5a + 5b \equiv 0\,\,(\text{mod}\,\,5)\]
+                  Two multiples of 5 added together will always be congruent modulo five, so we can
+                  subtract it from a quantity without changing that quantity's modularity to five.
+                  \begin{align*}
+                    2a + 3b \equiv 0\,\,(\text{mod}\,\,5)
+                                    & \implies\exists n\in\mathbb{Z}: 5n\mid (2a + 3b)  \\
+                    -3a - 2b \equiv 0\,\,(\text{mod}\,\,5)
+                                    & \implies\exists m\in\mathbb{Z}: 5m\mid -(3a + 2b) \\
+                    5(-m) = 3a + 2b & \implies 3a + 2b \equiv 0\,\,(\text{mod}\,\,5)
+                  \end{align*}
+            \item Transitive: $(a,b),\,(b,c)\in E \implies (a, c)\in E$
+                  \begin{align*}
+                    2a + 3b \equiv 0\,\,(\text{mod}\,\,5)
+                     & \implies\exists n\in\mathbb{Z}: 5n\mid (2a + 3b) \\
+                    2b + 3c \equiv 0\,\,(\text{mod}\,\,5)
+                     & \implies\exists m\in\mathbb{Z}: 5m\mid (2b + 3c) \\
+                    2a + 5b + 3c \equiv 0\,\,(\text{mod}\,\,5)
+                     & \implies 5(n + m)\mid (2a + 5b + 3c)
+                  \end{align*}
+                  Because $5b$ is a multiple of five it does not affect the modulo of the number.
+                  Therefore,
+                  \begin{align*}
+                    5(n + m)\mid (2a + 5b + 3c) & \implies 5(n + m)\mid (2a + 3c)                \\
+                                                & \implies 2a + 3c \equiv 0\,\,(\text{mod}\,\,5)
+                  \end{align*}
+          \end{enumerate}
+
+        \end{proof}
+  \item Let $R$ and $S$ be equivalence relations on a set $A$.
+        \begin{itemize}
+          \item Is $R\cup S$ an equivalence relation on $A$? Back up your answer with a proof.
+                \begin{proof}
+                  $R\cup S$ is not neccesarily transitive. \\
+                  If $R$ contains $(a,b)$ and not $(b,c)$, and $S$ contains
+                  $(b,c)$ $R\cup S$ and not $(a, b)$ then $R\cup S$ will contain
+                  $(a,b),(b,c)$ and not $(a,c)$.
+
+                  An example of this is: \\
+                  $A=\mathbb{Z}$,
+                  $(a,b)\in R$ if $a \equiv b\,\,(\text{mod}\,\,5)$,
+                  $(a,b)\in S$ if $a \equiv b\,\,(\text{mod}\,\,7)$
+                  \[(5,35)\in R,\,(35,7)\in S,\,(5,7)\notin R\cup S\]
+                \end{proof}
+          \item Is $R\cap S$ an equivalence relation on $A$? Back up your answer with a proof.
+                \begin{proof} $R\cap S$ holds all of the properties of an equivalence relation. \\
+                  \begin{enumerate}[i]
+                    \item Reflexive: $\forall a\in A,(a,a)\in R\cap S$. \\
+                          If $R$ and $S$ are equivalence relations they must be reflexive, and all
+                          $(a,a)$ will be in both sets.
+                    \item Symmetric:
+                  \end{enumerate}
+                \end{proof}
+        \end{itemize}
+  \item For elements $[a],[b]\in\mathbb{Z}_n$, recall that  $[a]-[b]=[a-b]$. Now suppose that
+        $H\subseteq\mathbb{Z}_n$ is a subset containing $d$ elements and that the relation $R$ on
+        $\mathbb{Z_n}$ defined by $([a],[b])\in R$ if $[a]-[b]\in H$ is an equivalence relation.
+        Prove that the equivalence class (with respect to $R$) of each element of $\mathbb{Z}_n$ has
+        $d$ elements, and prove that $d\mid n$.
+        \begin{proof}
+
+        \end{proof}
+\end{enumerate}
+\end{document}
