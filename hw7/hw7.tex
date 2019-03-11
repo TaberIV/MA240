@@ -146,12 +146,21 @@
                   \[(5,35)\in R,\,(35,7)\in S,\,(5,7)\notin R\cup S\]
                 \end{proof}
           \item Is $R\cap S$ an equivalence relation on $A$? Back up your answer with a proof.
-                \begin{proof} $R\cap S$ holds all of the properties of an equivalence relation. \\
+                \begin{proof} $R\cap S$ holds all of the properties of an equivalence relation.
                   \begin{enumerate}[i]
-                    \item Reflexive: $\forall a\in A,(a,a)\in R\cap S$. \\
-                          If $R$ and $S$ are equivalence relations they must be reflexive, and all
-                          $(a,a)$ will be in both sets.
-                    \item Symmetric:
+                    \item Reflexive: $(a,b)\in R\cap S\implies (a,a)\in R\cap S$. \\
+                          Both $R$ and $S$ are equivalence relations tbat must be reflexive. If both
+                          sets contain any elements that include $a$ then they most both include
+                          $(a,a)$. Alternatively, if one or more of the two sets do not contain any
+                          element that include $a$ then no elements including $a$ will be in
+                          $R\cap S$.
+                    \item Symmetric: $(a, b)\in R\cap S,\implies (b, a)\in R\cap S$ \\
+                          If $(a, b)\in R\cap S$, then $(a,b)$ must be in both $R$ and $S$, which
+                          are both equivalence relations so they must both contain $(b,a)$.
+                    \item Transitive: $(a,b),\,(b,c)\in R\cap S\implies (a,c)\in R\cap S$ \\
+                          If $(a,b)$ and $(b,c)$ are in $R\cap S$, then they must be in both $R$ and
+                          $S$. Since $R$ and $S$ are equivalence relations they must also contain
+                          $(a,c)$, so $(a,c)\in R\cap S$.
                   \end{enumerate}
                 \end{proof}
         \end{itemize}
