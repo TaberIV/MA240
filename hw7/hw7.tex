@@ -85,8 +85,8 @@
                   \end{enumerate}
                 \end{proof}
           \item Give a geometric description of the equivalence classes of $E$. \\
-                The relation $E$ contains pairs of paris of rational numbers, for the numbers in
-                each pairs' distance from zero summed is the same in both pairs.
+                The elemnts in relation $E$ are pairs of pairs of real numbers. The sum of the
+                two real numbers' distance from zero in each pair are equal.
         \end{itemize}
   \item Prove that the relation $R$ on $\mathbb{Z}$ given by
         $(a,b)\in R$ if $2a+3b\equiv0\,\,(\text{mod}\,\,5)$ is an equivalence relation.
@@ -148,15 +148,13 @@
           \item Is $R\cap S$ an equivalence relation on $A$? Back up your answer with a proof.
                 \begin{proof} $R\cap S$ holds all of the properties of an equivalence relation.
                   \begin{enumerate}[i]
-                    \item Reflexive: $(a,b)\in R\cap S\implies (a,a)\in R\cap S$. \\
-                          Both $R$ and $S$ are equivalence relations tbat must be reflexive. If both
-                          sets contain any elements that include $a$ then they most both include
-                          $(a,a)$. Alternatively, if one or more of the two sets do not contain any
-                          element that include $a$ then no elements including $a$ will be in
-                          $R\cap S$.
+                    \item Reflexive: $\forall a\in A,\,(a,a)\in R\cap S$. \\
+                          Both $R$ and $S$ are equivalence relations that must contain $(a,a)$, so
+                          $(a,a)\in R\cap S$.
                     \item Symmetric: $(a, b)\in R\cap S,\implies (b, a)\in R\cap S$ \\
-                          If $(a, b)\in R\cap S$, then $(a,b)$ must be in both $R$ and $S$, which
-                          are both equivalence relations so they must both contain $(b,a)$.
+                          If $(a,b)\in R\cap S$, then $(a,b)$ must be in both $R$ and $S$, which are
+                          both equivalence relations so they must both contain $(b,a)$, and 
+                          $(b,a)\in(a,a)\in R\cap S$.
                     \item Transitive: $(a,b),\,(b,c)\in R\cap S\implies (a,c)\in R\cap S$ \\
                           If $(a,b)$ and $(b,c)$ are in $R\cap S$, then they must be in both $R$ and
                           $S$. Since $R$ and $S$ are equivalence relations they must also contain
@@ -166,11 +164,11 @@
         \end{itemize}
   \item For elements $[a],[b]\in\mathbb{Z}_n$, recall that  $[a]-[b]=[a-b]$. Now suppose that
         $H\subseteq\mathbb{Z}_n$ is a subset containing $d$ elements and that the relation $R$ on
-        $\mathbb{Z_n}$ defined by $([a],[b])\in R$ if $[a]-[b]\in H$ is an equivalence relation.
-        Prove that the equivalence class (with respect to $R$) of each element of $\mathbb{Z}_n$ has
+        $\mathbb{Z}_n$ defined by $([a],[b])\in R$ if $[a]-[b]\in H$ is an equivalence relation.
+Prove that the equivalence class (with respect to $R$) of each element of $\mathbb{Z}_n$ has
         $d$ elements, and prove that $d\mid n$.
         \begin{proof}
-
+          
         \end{proof}
 \end{enumerate}
 \end{document}
