@@ -1,0 +1,102 @@
+\documentclass[12pt,a4paper,reqno,parskip=full]{amsart}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{colonequals}
+\usepackage{parskip}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usetikzlibrary{matrix,arrows,decorations.pathmorphing}
+
+\begingroup
+\makeatletter
+\@for\theoremstyle:=definition,remark,plain\do{
+\expandafter\g@addto@macro\csname th@\theoremstyle\endcsname{
+\addtolength\thm@preskip\parskip}}
+\endgroup
+
+\numberwithin{equation}{section}
+\addtolength{\textwidth}{3 truecm}
+\addtolength{\textheight}{1 truecm}
+\setlength{\voffset}{-.6 truecm}
+\setlength{\hoffset}{-1.3 truecm}
+\theoremstyle{plain}
+
+\newtheorem{theorem}[subsection]{Theorem}
+\newtheorem{proposition}[subsection]{Proposition}
+\newtheorem{lemma}[subsection]{Lemma}
+\newtheorem{corollary}[subsection]{Corollary}
+\newtheorem{claim}[subsection]{Claim}
+\newtheorem{conjecture}[subsection]{Conjecture}
+\newtheorem{question}[subsection]{Question}
+\newtheorem{remark}[subsection]{Remark}
+
+\theoremstyle{definition}
+
+\newtheorem{definition}[subsection]{Definition}
+\newtheorem{example}[subsection]{Example}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+\newcommand{\eps}{\varepsilon}
+
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\BS}{BS}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Id}{Id}
+\DeclareMathOperator{\Ham}{Ham}
+
+\def\AA{{\mathcal A}}
+\def\CC{{\mathcal C}}
+\def\DD{{\mathcal D}}
+\def\E{{\mathbb E}}
+\def\EE{{\mathcal E}}
+\def\FF{{\mathbb F}}
+\def\II{{\mathcal I}}
+\def\N{{\mathbb N}}
+\def\OO{{\mathcal O}}
+\def\PP{{\mathcal P}}
+\def\Q{{\mathbb Q}}
+\def\R{{\mathbb R}}
+\def\S{{\mathbb S}}
+\def\SS{{\mathcal S}}
+\def\UU{{\mathcal U}}
+\def\Z{{\mathbb Z}}
+
+\begin{document}
+
+\title{The title of your final paper}
+
+\author{Your name}
+
+\begin{abstract}
+Write a brief abstract that summarizes your paper.
+\end{abstract}
+
+\maketitle
+
+
+
+\section{Introduction}
+
+In the introduction of your paper, give a high-level description (that is, a description that doesn't go into too many technicalities) of your paper. Motivate and discuss your theorem, and give an overview, if appropriate, of its history.
+
+\section{Background}
+
+This section is optional. In case your theorem requires a lot of setup, or in case you would like to introduce it by way of some explicit example(s), do so here. In case the setup is very brief, you can simply include it in the next section instead.
+
+\section{Main result}
+
+State and write the proof of your theorem. Be rigorous, and be sure to use \LaTeX\ theorem and proof environments.
+
+\section{Applications}
+
+Discuss at least one application or consequence of your theorem. It doesn't necessarily have to be an application to another field---it could be an application to mathematics itself.
+
+\begin{thebibliography}{10}
+
+\bibitem{ThisIsaLabel} It is important that you cite \emph{all} of the sources that you used to research your theorem and list them in a bibliography. Be sure to cite your sources in the body of your paper as well. You can do this by creating a label for the citation within the bibliography.
+
+\end{thebibliography}
+
+\end{document}
