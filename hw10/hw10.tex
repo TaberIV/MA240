@@ -75,17 +75,46 @@
         What if G is infinite?
 
         \begin{proof}
+          If a row or column were not permutations of the elements of $G$,
+          then there would have to be repeated elements in this row or column.
+          This would imply
+          \begin{align*}
+            \exists g_i,g_j,g_k & \in G,          \\
+            g_j                 & \neq g_k,       \\
+            g_i\cdot g_j        & = g_i\cdot g_k.
+          \end{align*}
+          By manipulating this expression we can see that this cannot be possible.
+          \begin{align*}
+            g_i\cdot g_j                 & = g_i\cdot g_k                 \\
+            g_i^{-1}\cdot(g_i\cdot g_j)  & = g_i^{-1}\cdot(g_i\cdot g_k)  \\
+            (g_i^{-1}\cdot g_i)\cdot g_j & = (g_i^{-1}\cdot g_i)\cdot g_k \\
+            e\cdot g_j                   & = e\cdot g_k                   \\
+            g_j                          & = g_k
+          \end{align*}
 
+          This proof extends to rows and columns of both finite and infinite sets $G$.
         \end{proof}
+  \item Let G be a finite group such that $|G|$ is even. Prove that there
+        exists an element $g\in G$ that is not equal to the identity $e$
+        but that satisfies $g\cdot g=e$.
 
-  \item Let G be a finite group such that $|G|$ is even. Prove that there exists
-        an element $g\in G$ that is not equal to the identity $e$ but that
-        satisfies $g\cdot g=e$
+        \begin{proof}
+          If we pair every element in $G$ with its inverse, and there exists at most
+          one element $g$ that satisfies the conditions of the problem, then there
+          will be $|G|/2 - 1$ pairs of two distinct elements. $e$ is paired with
+          itself, so there must be one element left over and for $G$ to be a well defined group
+          this element $g$ must be its own inverse. If there are more than one elements
+          that are their own inverse then $G$ still satisfies the problem.
+        \end{proof}
 
   \item Recall that a group $G$ is \emph{Abelian} if it is commutative.
         \begin{itemize}
           \item Prove that if $G$ is an \emph{Abelian} group and
                 $H=\{a^2\mid a\in G\}$, then $H$ is a subgroup of $G$.
+
+                \begin{proof}
+                  
+                \end{proof}
           \item Prove that if $G$ is an \emph{Abelian} group and
                 $H=\{a\in G\mid a^2=e\}$, then $H$ is a subgroup of $G$.
         \end{itemize}
@@ -94,7 +123,7 @@
 
   \item Let $G$ be a group, and let $H$ be a subgroup of $G$. Recall that
         $G/H=\{gH\mid g\in G\}$ is the set of (left) cosets of $H$ in $G$.
-        Prove that if LaTeX: G G  is Abelian, then the rule $gH\cdot g'H=gg'H$
+        Prove that if $G$ is Abelian, then the rule $gH\cdot g'H=gg'H$
         defines a group operation on $G/H$.
 \end{enumerate}
 
